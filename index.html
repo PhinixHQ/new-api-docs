@@ -1,0 +1,1853 @@
+
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Official Wallex API Reference"
+        >
+    <title>Wallex API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-bef6804a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-145a3991.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-7558d097.svg" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">curl</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#5dbb671bc6" class="toc-h1 toc-link" data-title="پیش‌گفتار">پیش‌گفتار</a>
+          </li>
+          <li>
+            <a href="#1738dcea98" class="toc-h1 toc-link" data-title="پیش‌نیازها">پیش‌نیازها</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#53a31ca997" class="toc-h2 toc-link" data-title="انواع داده">انواع داده</a>
+                  </li>
+                  <li>
+                    <a href="#2621328376" class="toc-h2 toc-link" data-title="شیوهٔ ارسال درخواست">شیوهٔ ارسال درخواست</a>
+                  </li>
+                  <li>
+                    <a href="#api" class="toc-h2 toc-link" data-title="ساخت و مدیریت کلیدهای API">ساخت و مدیریت کلیدهای API</a>
+                  </li>
+                  <li>
+                    <a href="#api-2" class="toc-h2 toc-link" data-title="استفاده از کلید API">استفاده از کلید API</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#1ce259d3f1" class="toc-h1 toc-link" data-title="بازارها">بازارها</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#334792bb2b" class="toc-h2 toc-link" data-title="لیست بازارها">لیست بازارها</a>
+                  </li>
+                  <li>
+                    <a href="#f0139d8eb6" class="toc-h2 toc-link" data-title="آمار جهانی رمزارزها">آمار جهانی رمزارزها</a>
+                  </li>
+                  <li>
+                    <a href="#be8d9c51a2" class="toc-h2 toc-link" data-title="لیست سفارش‌های باز">لیست سفارش‌های باز</a>
+                  </li>
+                  <li>
+                    <a href="#88252f5871" class="toc-h2 toc-link" data-title="لیست آخرین معاملات">لیست آخرین معاملات</a>
+                  </li>
+                  <li>
+                    <a href="#ohlc" class="toc-h2 toc-link" data-title="کندل‌ها (آمار OHLC بازارها)">کندل‌ها (آمار OHLC بازارها)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c542f388d8" class="toc-h1 toc-link" data-title="حساب کاربری">حساب کاربری</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#88cb25e727" class="toc-h2 toc-link" data-title="پروفایل">پروفایل</a>
+                  </li>
+                  <li>
+                    <a href="#b15015c4dd" class="toc-h2 toc-link" data-title="سطح کاربری و کارمزد">سطح کاربری و کارمزد</a>
+                  </li>
+                  <li>
+                    <a href="#2e0c329164" class="toc-h2 toc-link" data-title="شماره‌های کارت‌های بانکی">شماره‌های کارت‌های بانکی</a>
+                  </li>
+                  <li>
+                    <a href="#a164fbd6cd" class="toc-h2 toc-link" data-title="شماره‌های شبای بانکی">شماره‌های شبای بانکی</a>
+                  </li>
+                  <li>
+                    <a href="#47e5fe8a01" class="toc-h2 toc-link" data-title="دارایی‌های کیف پول">دارایی‌های کیف پول</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#be6c46831d" class="toc-h1 toc-link" data-title="سفارش‌ها و معاملات">سفارش‌ها و معاملات</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#34b353d77b" class="toc-h2 toc-link" data-title="ثبت سفارش">ثبت سفارش</a>
+                  </li>
+                  <li>
+                    <a href="#27f17a67f7" class="toc-h2 toc-link" data-title="لغو سفارش">لغو سفارش</a>
+                  </li>
+                  <li>
+                    <a href="#9221f385d5" class="toc-h2 toc-link" data-title="لیست سفارش‌های فعال">لیست سفارش‌های فعال</a>
+                  </li>
+                  <li>
+                    <a href="#88252f5871" class="toc-h2 toc-link" data-title="لیست آخرین معاملات">لیست آخرین معاملات</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='5dbb671bc6'>پیش‌گفتار</h1>
+<p>سندی که پیش روی شماست، راهنمایی‌ست برای معامله‌گرهای حرفه‌ای تا با استفاده از APIهای فراهم‌شده، بیشترین بهره را از حساب کاربری والکس خود ببرند. این راهنما مستندی رسمی‌ست و متناسب با آخرین تغییرات APIهای والکس بروز می‌شود.</p>
+<h1 id='1738dcea98'>پیش‌نیازها</h1>
+<ul>
+<li>تمام اندپوینت‌هایی که در ادامه به آنها پرداخته شده، تنها از طریق نشانی https://api.wallex.ir دردسترس‌اند.</li>
+<li>خروجی تمام اندپوینت‌ها در قالب JSON به فراخوان ارائه خواهند شد.</li>
+<li>اندپوینت‌های مرتبط با دریافت/ارسال اطلاعات شخصی توسط کلیدهای API محافظت شده‌اند.</li>
+</ul>
+<h2 id='53a31ca997'>انواع داده</h2>
+<ul>
+<li>عدد (number) مانند <code>3.75</code></li>
+<li>رشته (string) مانند <code>&quot;BTC&quot;</code></li>
+<li>عددرشته (number string) مانند <code>&quot;3.000001&quot;</code></li>
+<li>جهت تراکشن (direction) شامل دو مقدار <code>&quot;BUY&quot;</code> و <code>&quot;SELL&quot;</code></li>
+<li>تاریخ و زمان (datetime) با قالب <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a></li>
+<li>تایم‌استمپ (timestamp) با قالب <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time</a></li>
+<li>بولی (boolean) شامل دو مقدار <code>true</code> و <code>false</code></li>
+</ul>
+<h2 id='2621328376'>شیوهٔ ارسال درخواست</h2>
+<ul>
+<li>برای درخواست‌های <code>GET</code> باید پارامترهای مورد نیاز در بخش کوئری URL ارسال شود.</li>
+<li>برای درخواست‌های <code>PUT</code> و <code>POST</code> و <code>PATCH</code> پارامترها را می‌توان در بخش کوئری یا در بخش بدنهٔ درخواست ارسال کرد. همچنین هدر <code>Content-Type</code> باید متناسب با قالب اطلاعات ارسالی، برابر با <code>x-www-form-urlencoded</code> یا <code>application/json</code>، تنظیم گردد.</li>
+</ul>
+<h2 id='api'>ساخت و مدیریت کلیدهای API</h2>
+<p>برای ساخت و مدیریت کلیدهای API کاربران باید به بخش <a href="https://wallex.ir/app/my-account/api-management">مدیریت API</a> سایت والکس مراجعه کرده؛ و برای ساخت کلید جدید کافیست بر روی دکمهٔ «ساخت API» کلیک کنند.</p>
+
+<p><img src="images/api-management-948dad28.png" alt="مدیریت API والکس" /></p>
+
+<p>در بخش ساخت API، لازم است که برای کلید جدید نامی منحصربه‌فرد و دلخواه انتخاب کنید. زمان اعتبار هر کلید جدید حداکثر تا ۹۰ روز قابل انتخاب است و قابل تمدید نیست. بعد از گذشت زمان اعتبار، کلید به صورت خودکار منقضی خواهد شد و نیاز است تا کلید جدیدی ایجاد شود.</p>
+
+<aside class="notice">
+در حال حاضر ساختن بیش از ۳ کلید API در هر حساب کاربری ممکن نیست.
+</aside>
+
+<p>برای امنیت بیشتر در انتخاب مجوزهای دسترسی دقت کافی داشته و در صورت امکان فهرستی از IPهای مجاز که با استفاده از کلید می‌توانند به اندپوینت‌های شخصی دسترسی داشته باشند، وارد کنید. بدیهی‌ست که خالی گذاشتن لیست IPهای مجاز به معنای اعطای مجوز به تمام IPهاست.</p>
+
+<aside class="notice">
+برای کلیدهایی که مجوز «برداشت» دارند، وارد کردن لیست IPهای مجاز اجباری‌ست.
+</aside>
+
+<aside class="warning">
+در حفاظت از کلیدهای API خود دقت کافی داشته و آن را با دیگران به اشتراک نگذارید. اگر به طور ناخواسته دیگران به کلید API شما دسترسی یافتند، از طریق سایت والکس اقدام به حذف کلید افشاشده و ساخت کلید جدید کنید.
+</aside>
+<h2 id='api-2'>استفاده از کلید API</h2>
+<blockquote>
+<p>برای درخواست‌های HTTP کلید API را در هدر <code>X-API-Key</code> قرار دهید:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/...'</span> <span class="nt">-H</span> <span class="s1">'X-API-Key: &lt;api-key&gt;'</span>
+</code></pre></div>
+<p>برای ارسال درخواست به اندپوینت‌های محافظت‌شده کافی‌ست یک هدر <code>X-API-Key</code> به درخواست HTTP افزوده، و مقدار آن را برابر با کلیدی که در بخش قبل ایجاد کرده‌اید، قرار دهید.</p>
+<h1 id='1ce259d3f1'>بازارها</h1><h2 id='334792bb2b'>لیست بازارها</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/markets'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTCUSDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAssetPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quotePrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بیت کوین - تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faBaseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بیت کوین"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faQuoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stepSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tickSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1e-06</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minNotional"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"bidPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20900.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"askPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21097.7400000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_ch"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.04</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"7d_ch"</span><span class="p">:</span><span class="w"> </span><span class="mf">-29.87</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.9666210000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"7d_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.4612910000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_quoteVolume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41471.0065635500000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_highPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22888.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_lowPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20349.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20991.4300000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20991.4300000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastTradeSide"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bidVolume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14.8397900000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"askVolume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1529210000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bidCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">124</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"askCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">349</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"SELL"</span><span class="p">:</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"BUY"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-01T00:00:00.000000Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با درخواست زیر می‌توانید لیستی از بازارها و وضعیت آنها دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/markets</code></p>
+<h3 id='bb3932300e'>خروجی</h3>
+<p>خروجی این درخواست شامل نگاشتی از بازارهاست و هر بازار شامل اطلاعاتی به شرح زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>baseAsset</code></td>
+<td>رشته</td>
+<td>ارز پایه</td>
+</tr>
+<tr>
+<td><code>baseAssetPrecision</code></td>
+<td>عدد</td>
+<td>تعداد اعشار ارز پایه</td>
+</tr>
+<tr>
+<td><code>quoteAsset</code></td>
+<td>رشته</td>
+<td>ارز تجاری</td>
+</tr>
+<tr>
+<td><code>quoteAssetPrecision</code></td>
+<td>عدد</td>
+<td>تعداد اعشار ارز تجاری</td>
+</tr>
+<tr>
+<td><code>faName</code></td>
+<td>رشته</td>
+<td>نام فارسی بازار</td>
+</tr>
+<tr>
+<td><code>faBaseAsset</code></td>
+<td>رشته</td>
+<td>نام فارسی ارز پایه</td>
+</tr>
+<tr>
+<td><code>faQuoteAsset</code></td>
+<td>رشته</td>
+<td>نام فارسی ارز تجاری</td>
+</tr>
+<tr>
+<td><code>stepSize</code></td>
+<td>عدد</td>
+<td>تعداد اعشار افزایش/کاهش حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>tickSize</code></td>
+<td>عدد</td>
+<td>تعداد اعشار افزایش/کاهش مبلغ تراکنش</td>
+</tr>
+<tr>
+<td><code>minQty</code></td>
+<td>عدد</td>
+<td>حداقل حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>maxQty</code></td>
+<td>عدد</td>
+<td>حداکثر حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>minNotional</code></td>
+<td>عدد</td>
+<td>حداقل مبلغ تراکنش</td>
+</tr>
+<tr>
+<td><code>stats</code></td>
+<td>متغیر</td>
+<td>اطلاعات آماری بازار</td>
+</tr>
+</tbody></table>
+
+<p>همچنین آمارهای هر بازار شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>bidPrice</code></td>
+<td>عددرشته</td>
+<td>بیشترین قیمت سفارش‌های خرید</td>
+</tr>
+<tr>
+<td><code>bidVolume</code></td>
+<td>عددرشته</td>
+<td>مجموع حجم سفارش‌های خرید</td>
+</tr>
+<tr>
+<td><code>bidCount</code></td>
+<td>عدد</td>
+<td>تعداد سفارش‌های خرید</td>
+</tr>
+<tr>
+<td><code>askPrice</code></td>
+<td>عددرشته</td>
+<td>کمترین قیمت سفارش‌های فروش</td>
+</tr>
+<tr>
+<td><code>askVolume</code></td>
+<td>عددرشته</td>
+<td>مجموع حجم سفارش‌های فروش</td>
+</tr>
+<tr>
+<td><code>askCount</code></td>
+<td>عدد</td>
+<td>تعداد سفارش‌های فروش</td>
+</tr>
+<tr>
+<td><code>24h_ch</code></td>
+<td>عدد</td>
+<td>درصد تغییرات قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_volume</code></td>
+<td>عددرشته</td>
+<td>حجم تراکنش‌ها در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_quoteVolume</code></td>
+<td>عددرشته</td>
+<td>مبلغ تراکنش‌ها در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_highPrice</code></td>
+<td>عددرشته</td>
+<td>بیشترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_lowPrice</code></td>
+<td>عددرشته</td>
+<td>کمترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>7d_ch</code></td>
+<td>عدد</td>
+<td>درصد تغییرات قیمت در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>7d_volume</code></td>
+<td>عددرشته</td>
+<td>حجم تراکنش‌ها در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>lastPrice</code></td>
+<td>عددرشته</td>
+<td>آخرین قیمت تراکنش</td>
+</tr>
+<tr>
+<td><code>lastQty</code></td>
+<td>عددرشته</td>
+<td>آخرین حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>lastTradeSide</code></td>
+<td>جهت</td>
+<td>جهت آخرین تراکنش</td>
+</tr>
+<tr>
+<td><code>direction.BUY</code></td>
+<td>عدد</td>
+<td>درصد سفارش‌های خرید به کل سفارش‌ها</td>
+</tr>
+<tr>
+<td><code>direction.SELL</code></td>
+<td>عدد</td>
+<td>درصد سفارش‌های فروش به کل سفارش‌ها</td>
+</tr>
+</tbody></table>
+<h2 id='f0139d8eb6'>آمار جهانی رمزارزها</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/currencies/stats'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بیت کوین"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BITCOIN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dominance"</span><span class="p">:</span><span class="w"> </span><span class="mf">40.012750289139</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">34963217199.777</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"market_cap"</span><span class="p">:</span><span class="w"> </span><span class="mf">801033354010.49</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ath"</span><span class="p">:</span><span class="w"> </span><span class="mi">69045</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ath_change_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mf">-46.00463</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ath_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-11-10T14:24:11Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">37276</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"daily_high_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">38300</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"daily_low_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36832</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekly_high_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">38232.178732177</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weekly_low_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">36774.00714224</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_1h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2238585</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.92522</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.67127</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_14d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-13.55187</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.52389</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_60d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-34.79681</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_200d"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.37576</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"percent_change_1y"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.99642</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">-956.17873217708</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_7d"</span><span class="p">:</span><span class="w"> </span><span class="mf">969.5905595353</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_14d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-5843.7921430803</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_30d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9043.6510880525</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_60d"</span><span class="p">:</span><span class="w"> </span><span class="mf">-19893.371993811</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_200d"</span><span class="p">:</span><span class="w"> </span><span class="mf">4397.4981264285</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_change_1y"</span><span class="p">:</span><span class="w"> </span><span class="mf">3076.480189637</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"max_supply"</span><span class="p">:</span><span class="w"> </span><span class="mi">21000000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_supply"</span><span class="p">:</span><span class="w"> </span><span class="mi">18928912</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"circulating_supply"</span><span class="p">:</span><span class="w"> </span><span class="mi">18928912</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-09T04:25:16Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-01-31T10:10:29Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید آخرین آمار جهانی رمزارزها را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/currencies/stats</code></p>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی این درخواست فهرستی از آمار جهانی رمزارزهاست و هر آمار شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>key</code></td>
+<td>رشته</td>
+<td>کد رمزارز</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>رشته</td>
+<td>نام فارسی رمزارز</td>
+</tr>
+<tr>
+<td><code>name_en</code></td>
+<td>رشته</td>
+<td>نام انگلیسی رمزارز</td>
+</tr>
+<tr>
+<td><code>rank</code></td>
+<td>عدد</td>
+<td>رتبه رمزارز در بازار</td>
+</tr>
+<tr>
+<td><code>dominance</code></td>
+<td>عدد</td>
+<td>درصد تسلط رمزارز</td>
+</tr>
+<tr>
+<td><code>volume_24h</code></td>
+<td>عدد</td>
+<td>حجم تراکنش‌ها در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>market_cap</code></td>
+<td>عدد</td>
+<td>ارزش سرمایهٔ موجود در بازار</td>
+</tr>
+<tr>
+<td><code>ath</code></td>
+<td>عدد</td>
+<td>بالاترین قیمت ثبت شده</td>
+</tr>
+<tr>
+<td><code>ath_change_percentage</code></td>
+<td>عدد</td>
+<td>درصد تغییر نسبت به بالاترین قیمت ثبت شده</td>
+</tr>
+<tr>
+<td><code>ath_date</code></td>
+<td>رشته</td>
+<td>تاریخ ثبت بالاترین قیمت</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عدد</td>
+<td>قیمت رمزارز در حال حاضر</td>
+</tr>
+<tr>
+<td><code>daily_high_price</code></td>
+<td>عدد</td>
+<td>بالاترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>daily_low_price</code></td>
+<td>عدد</td>
+<td>پایین‌ترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>weekly_high_price</code></td>
+<td>عدد</td>
+<td>بالاترین قیمت در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>weekly_low_price</code></td>
+<td>عدد</td>
+<td>قیمت پایین‌ترین در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_1h</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در یگ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_24h</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_7d</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_14d</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۱۴ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_30d</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۳۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_60d</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۶۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_200d</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در ۲۰۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>percent_change_1y</code></td>
+<td>عدد</td>
+<td>درصد تغییر قیمت در یک سال گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_24h</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_7d</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۷ روز گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_14d</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۱۴ روز گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_30d</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۳۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_60d</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۶۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_200d</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در ۲۰۰ روز گذشته</td>
+</tr>
+<tr>
+<td><code>price_change_1y</code></td>
+<td>عدد</td>
+<td>تغییر قیمت در یک سال گذشته</td>
+</tr>
+<tr>
+<td><code>max_supply</code></td>
+<td>عدد</td>
+<td>حداکثر حجم رمزارزهای ممکن</td>
+</tr>
+<tr>
+<td><code>total_supply</code></td>
+<td>عدد</td>
+<td>حجم رمزارزهای موجود</td>
+</tr>
+<tr>
+<td><code>circulating_supply</code></td>
+<td>عدد</td>
+<td>حجم رمزارزهای در گردش</td>
+</tr>
+</tbody></table>
+<h2 id='be8d9c51a2'>لیست سفارش‌های باز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/depth?symbol=BTCUSDT'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21300.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"106.5"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21400.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"107"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21100.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1e-06</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0211"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20889.8100000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001472</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.74980032"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>با درخواست زیر می‌توانید لیست سفارش‌های باز (Order Book) هر بازار را دریافت کنید:</p>
+
+<p>‍<code>GET https://api.wallex.ir/v1/depth</code></p>
+<h3 id='32005b38cc'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+<h3 id='bb3932300e-3'>خروجی</h3>
+<p>خروجی این درخواست شامل فهرستی از سفارش‌های فروش (ask) و خرید (bid) است که هر کدام شامل اطلاعات زیرند:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>عدد</td>
+<td>حجم خرید/فروش</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت</td>
+</tr>
+</tbody></table>
+<h2 id='88252f5871'>لیست آخرین معاملات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/trades?symbol=BTCUSDT'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"latestTrades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000010000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21100.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0211000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isBuyOrder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-17T11:53:02Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1200620000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21100.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2533.3082000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isBuyOrder"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-17T11:50:06Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با درخواست زیر می‌توانید فهرستی از آخرین معاملات بازار والکس را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/trades</code></p>
+<h3 id='32005b38cc-2'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+<h3 id='bb3932300e-4'>خروجی</h3>
+<p>خروجی این درخواست شامل فهرستی از آخرین معاملات بازار و هر معامله شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>عدد</td>
+<td>حجم معامله</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد معامله</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت معامله</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>زمان</td>
+<td>زمان ثبت معامله</td>
+</tr>
+</tbody></table>
+<h2 id='ohlc'>کندل‌ها (آمار OHLC بازارها)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/udf/history?symbol=BTCTMN&amp;resolution=60&amp;from=1654350171&amp;to=1655502171'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"t"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="mi">1654351200</span><span class="p">,</span><span class="w">
+    </span><span class="mi">1654354800</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"c"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"948896452.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"960015360.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"o"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"950625912.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"948896452.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"954590146.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"961381312.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"l"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"948896452.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"948896452.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"0.2314400000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"0.3148050000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>با این درخواست می‌توانید کندل‌های بازارهای والکس را در بازهٔ زمانی مشخص دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/udf/history</code></p>
+<h3 id='32005b38cc-3'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>دقت در تعیین بازهٔ زمانی کندل‌ها</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>تایم‌استمپ</td>
+<td>بله</td>
+<td>زمان شروع بازهٔ زمانی کندل‌ها</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>تایم‌استمپ</td>
+<td>بله</td>
+<td>زمان پایان بازهٔ زمانی کندل‌ها</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+
+<aside class="notice">
+مقادیر مجاز برای دقت در تعیین بازهٔ زمانی کندل‌ها برابرند با: 
+
+<ul>
+  <li><code>1</code> برای کندل‌های دقیقه‌ای</li>
+  <li><code>60</code> برای کندل‌های ساعتی</li>
+  <li><code>180</code> برای کندل‌های ۳ ساعته</li>
+  <li><code>360</code> برای کندل‌های ۶ ساعته</li>
+  <li><code>720</code> برای کندل‌های ۱۲ ساعته</li>
+  <li><code>1D</code> برای کندل‌های روزانه</li>
+</ul>
+</aside>
+<h3 id='bb3932300e-5'>خروجی</h3>
+<p>خروجی این درخواست شامل فهرستی از کندل‌ها بازار شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>t</code></td>
+<td>تایم‌استمپ</td>
+<td>زمان شروع کندل‌ها</td>
+</tr>
+<tr>
+<td><code>o</code></td>
+<td>عددرشته</td>
+<td>اولین قیمت کندل‌ها</td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>عددرشته</td>
+<td>بالاترین قیمت کندل‌ها</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>عددرشته</td>
+<td>پایین‌ترین قیمت کندل‌ها</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>عددرشته</td>
+<td>آخرین قیمت کندل‌ها</td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>عددرشته</td>
+<td>حجم معاملات کندل‌ها</td>
+</tr>
+</tbody></table>
+<h1 id='c542f388d8'>حساب کاربری</h1>
+<aside class="notice">
+دسترسی به اطلاعات حساب کاربری نیاز به احراز هویت توسط کلید API دارد.
+</aside>
+<h2 id='88cb25e727'>پروفایل</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/profile'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000012345</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"مجید"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"حسینی"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"national_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899****547"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"face_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"birthday"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1990-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"021"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"main_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22222222"</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"mobile_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0912****789"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"verification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNVERIFIED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as*******@g****.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invite_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"commission"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"kyc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید پروفایل کاربری خود را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/profile</code></p>
+<h3 id='bb3932300e'>خروجی</h3>
+<p>خروجی این درخواست، شامل اطلاعات شخصی کاربر همچون اطلاعات هویتی و اطلاعات تماس است.</p>
+<h2 id='b15015c4dd'>سطح کاربری و کارمزد</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/fee'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"BTCTMN"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00200000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00200000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recent_days_sum"</span><span class="p">:</span><span class="w"> </span><span class="mf">250000000.00</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"BTCUSDT"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00200000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00200000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recent_days_sum"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید میزان کارمزد معاملات هر بازار را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/fee</code></p>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی این درخواست نگاشتی از بازارهای والکس و میزان کارمزد دریافتی هر بازار است. هر بازار شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>makerFeeRate</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد دریافتی از فروشنده</td>
+</tr>
+<tr>
+<td><code>takerFeeRate</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد دریافتی از خریدار</td>
+</tr>
+<tr>
+<td><code>recent_days_sum</code></td>
+<td>عدد</td>
+<td>مجموع معاملات در ۳ ماه گذشته</td>
+</tr>
+</tbody></table>
+<h2 id='2e0c329164'>شماره‌های کارت‌های بانکی</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/card-numbers'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"card_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6219**********82"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"مجید حسینی / فعال"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیست شماره‌های کارت‌های بانکی خود را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/card-numbers</code></p>
+<h3 id='bb3932300e-3'>خروجی</h3>
+<p>خروجی این درخواست فهرستی از شماره‌های کارت‌های بانکی ثبت شده برای کاربر است.</p>
+<h2 id='a164fbd6cd'>شماره‌های شبای بانکی</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/ibans'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">999999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"iban"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IR5905****************3001"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"مجید حسینی / فعال"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"سامان"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bank_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SABCIR"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بانک سامان"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیست شماره‌های شبای بانکی خود را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/ibans</code></p>
+<h3 id='bb3932300e-4'>خروجی</h3>
+<p>خروجی این درخواست فهرستی از شماره‌های شبای بانکی ثبت شده برای کاربر است.</p>
+<h2 id='47e5fe8a01'>دارایی‌های کیف پول</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/balances'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"TMN"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TMN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"تومان"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fiat"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"USDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fiat"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید دارایی‌های کیف پول خود را به تفکیک ارز/رمزارز دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/balances</code></p>
+<h3 id='bb3932300e-5'>خروجی</h3>
+<p>خروجی این درخواست نگاشتی از دارایی‌های کیف پول کاربر برای هر ارز/رمزارز است. هر دارایی شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>asset</code></td>
+<td>رشته</td>
+<td>نماد رمزارز</td>
+</tr>
+<tr>
+<td><code>faName</code></td>
+<td>رشته</td>
+<td>نام فارسی رمزارز</td>
+</tr>
+<tr>
+<td><code>fiat</code></td>
+<td>بولی</td>
+<td>آیا دارایی یک ارز است؟</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>عددرشته</td>
+<td>مقدار دارایی</td>
+</tr>
+<tr>
+<td><code>locked</code></td>
+<td>عددرشته</td>
+<td>دارایی فریزشده</td>
+</tr>
+</tbody></table>
+<h1 id='be6c46831d'>سفارش‌ها و معاملات</h1>
+<aside class="notice">
+دسترسی به سفارش‌ها و معاملات کاربر نیاز به احراز هویت توسط کلید API دارد.
+</aside>
+<h2 id='34b353d77b'>ثبت سفارش</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{
+  "symbol": "BTCUSDT",
+  "type": "LIMIT"
+  "side": "BUY",
+  "price": "10000",
+  "quantity": "0.001",
+}'</span> <span class="s1">'https://api.wallex.ir/v1/account/orders'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"origQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"origSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62999995.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-18T13:45:08.000000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید سفارش جدیدی برای خرید/فروش رمزارز ثبت کنید:</p>
+
+<p><code>POST https://api.wallex.ir/v1/account/orders</code></p>
+<h3 id='194e5e5a5f'>بدنهٔ درخواست</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نوع سفارش</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>بله</td>
+<td>جهت خرید/فروش</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>بله</td>
+<td>قیمت واحد</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>عددرشته</td>
+<td>بله</td>
+<td>حجم سفارش</td>
+</tr>
+<tr>
+<td><code>client_id</code></td>
+<td>رشته</td>
+<td>خیر</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+
+<aside class="notice">
+مقادیر مجاز برای نوع سفارش شامل مقدارهای زیر است:
+
+<ul>
+<li><code>LIMIT</code> برای سفارش‌هایی با قیمتی که با <code>price</code> محدود می‌شود</li>
+<li><code>MARKET</code> برای سفارش‌هایی با قیمتی که در بازار مشخص می‌شود</li>
+</ul>
+</aside>
+
+<aside class="notice">
+اگر شناسهٔ یکتای سفارش در بدنهٔ درخواست ارائه نشود، یک شناسهٔ یکتا تولید خواهد شد.
+</aside>
+<h3 id='bb3932300e'>خروجی</h3>
+<p>خروجی درخواست ثبت سفارش اطلاعات سفارش ثبت شده و شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>رشته</td>
+<td>نوع سفارش</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>جهت خرید/فروش</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد</td>
+</tr>
+<tr>
+<td><code>origQty</code></td>
+<td>عددرشته</td>
+<td>حجم سفارش</td>
+</tr>
+<tr>
+<td><code>origSum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت سفارش</td>
+</tr>
+<tr>
+<td><code>executedPrice</code></td>
+<td>عددرشته</td>
+<td>قیمت محقق شده</td>
+</tr>
+<tr>
+<td><code>executedQty</code></td>
+<td>عددرشته</td>
+<td>حجم محقق شده</td>
+</tr>
+<tr>
+<td><code>executedSum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت محقق شده</td>
+</tr>
+<tr>
+<td><code>executedPercent</code></td>
+<td>عدد</td>
+<td>درصد تحقق سفارش</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>رشته</td>
+<td>وضعیت سفارش</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>بولی</td>
+<td>سفارش فعال یا غیرفعال</td>
+</tr>
+<tr>
+<td><code>clientOrderId</code></td>
+<td>رشته</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>تاریخ</td>
+<td>زمان ثبت سفارش</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+وضعیت سفارش ممکن است یکی از مقادیر زیر باشد:
+
+<ul>
+<li><code>NEW</code> سفارش باز</li>
+<li><code>FILLED</code> سفارش تکمیل شده</li>
+<li><code>CANCELED</code> سفارش لغو شده</li>
+</ul>
+</aside>
+<h2 id='27f17a67f7'>لغو سفارش</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s1">'https://api.wallex.ir/v1/account/orders?clientOrderId=LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb'</span>
+</code></pre></div>
+<p>با این درخواست می‌توانید یک سفارش فعال را لغو کنید:</p>
+
+<p><code>DELETE https://api.wallex.ir/v1/account/orders</code></p>
+<h3 id='32005b38cc'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>clientOrderId</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+</tbody></table>
+<h2 id='9221f385d5'>لیست سفارش‌های فعال</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/openOrders'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"origQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"origSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"executedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62999995.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"executedQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"executedSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"executedPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-18T13:45:08.000000Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیستی از سفارش‌های فعال را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/openOrders</code></p>
+<h3 id='32005b38cc-2'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>خیر</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی این درخواست فهرستی از سفارش‌های فعال است که اطلاعات هر سفارش مشابه اطلاعاتی‌ست که در درخواست <strong>ثبت سفارش</strong> گفته شد.</p>
+<h2 id='88252f5871'>لیست آخرین معاملات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/trades'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"AccountLatestTrades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAXGTMN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0032340000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61133333.0000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"197705.1989220000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000097020000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCoefficient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0030000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAXG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-18T17:22:25Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیستی از سفارش‌های فعال را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/openOrders</code></p>
+<h3 id='32005b38cc-3'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>خیر</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>خیر</td>
+<td>جهت معامله</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-3'>خروجی</h3>
+<p>خروجی این درخواست فهرستی از آخرین معاملات انجام شده است که هر معامله شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد معامله</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>عددرشته</td>
+<td>حجم معامله</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت معامله</td>
+</tr>
+<tr>
+<td><code>fee</code></td>
+<td>عددرشته</td>
+<td>کارمزد معامله</td>
+</tr>
+<tr>
+<td><code>feeCoefficient</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد معامله</td>
+</tr>
+<tr>
+<td><code>feeAsset</code></td>
+<td>عددرشته</td>
+<td>ارز کارمزد معامله</td>
+</tr>
+<tr>
+<td><code>isBuyer</code></td>
+<td>بولی</td>
+<td>آیا معامله خرید است؟</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>زمان</td>
+<td>زمان ثبت معامله</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">curl</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
