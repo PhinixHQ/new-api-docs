@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -306,6 +306,7 @@
       <img src="images/logo-7558d097.svg" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">curl</a>
+              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -389,7 +390,25 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#5750146b8f" class="toc-h1 toc-link" data-title="وب‌سوکت">وب‌سوکت</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#9d90bd86bb" class="toc-h2 toc-link" data-title="سفارش‌های فعال">سفارش‌های فعال</a>
+                  </li>
+                  <li>
+                    <a href="#a676842b93" class="toc-h2 toc-link" data-title="معامله‌های انجام‌شده">معامله‌های انجام‌شده</a>
+                  </li>
+                  <li>
+                    <a href="#c35b3581b4" class="toc-h2 toc-link" data-title="اطلاعات زندهٔ بازار">اطلاعات زندهٔ بازار</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
+        <ul class="toc-footer">
+            <li><a href='https://wallex.ir'>سایت والکس</a></li>
+            <li><a href='https://github.com/wallex-docs/wallex-docs.github.io/issues'>گزارش خطای مستندات</a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
@@ -1841,11 +1860,167 @@
 <td>زمان ثبت معامله</td>
 </tr>
 </tbody></table>
+<h1 id='5750146b8f'>وب‌سوکت</h1>
+<blockquote>
+<p>اتصال به وب‌سوکت:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># See "javascript" section.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">io</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">socket.io-client</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.wallex.ir</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">transports</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>سابسکرایب کانال:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># See "javascript" section.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">"</span><span class="s2">subscribe</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+</code></pre></div>
+<p>برای اتصال به سرویس وب‌سوکت باید از کلاینت <a href="https://socket.io">socket.io</a> (نسخهٔ <code>v2.5.0</code>، یا سازگار با آن) استفاده کنید.</p>
+
+<p>برای دریافت هر یک از اطلاعاتی که در ادامه توضیحات آنها خواهد آمد، باید برروی کانال آن سابسکرایب کنید. برای این منظور پارامتر <code>eventName</code> را برابر <code>subscribe</code> تنظیم و آبجکتی را که مشخصات آن، بنا بر آنچه در ادامه گفته خواهد شد، مرتبط با نوع داده‌های دریافتی‌ست به عنوان پارامتر <code>args</code> ارسال کنید.</p>
+
+<p>تفسیر داده‌های دریافتی مشابه آن چیزی‌ست که برای اندپوینت‌های مرتبط با هر کدام از این اطلاعات پیشتر گفته شده است.</p>
+<h2 id='9d90bd86bb'>سفارش‌های فعال</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># See "javascript" section.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">io</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">socket.io-client</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.wallex.ir</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">transports</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">});</span>
+
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">connect</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">"</span><span class="s2">subscribe</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDTTMN@sellDepth</span><span class="dl">"</span>
+  <span class="p">});</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">Broadcaster</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">channel</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">USDTTMN@sellDepth</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ پیام دریافتی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"0"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mf">214.86</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"31695.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sum"</span><span class="p">:</span><span class="mf">6809987.7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"1"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mf">331.55</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"31669.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sum"</span><span class="p">:</span><span class="mf">10499856.950000001</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>برای دریافت سفارش‌های فعال خرید و فروش برای هر یک از بازارها، باید به‌ترتیب برروی کانال‌های <code>SYMBOL@buyDepth</code> و <code>SYMBOL@sellDepth</code> سابسکرایب کنید.</p>
+
+<aside class="notice">
+مقادیر مجاز برای <code>SYMBOL</code> شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+<h2 id='a676842b93'>معامله‌های انجام‌شده</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># See "javascript" section.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">io</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">socket.io-client</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.wallex.ir</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">transports</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">});</span>
+
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">connect</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">"</span><span class="s2">subscribe</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDTTMN@trade</span><span class="dl">"</span>
+  <span class="p">});</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">Broadcaster</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">channel</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">USDTTMN@trade</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ پیام دریافتی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"isBuyOrder"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quantity"</span><span class="p">:</span><span class="s2">"705.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"31704.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="s2">"2022-06-26T11:14:09Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>برای دریافت سفارش‌های انجام‌شده برای هر یک از بازارها باید برروی کانال <code>SYMBOL@trade</code> سابسکرایب کنید.</p>
+
+<aside class="notice">
+مقادیر مجاز برای <code>SYMBOL</code> شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
+<h2 id='c35b3581b4'>اطلاعات زندهٔ بازار</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># See "javascript" section.</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">io</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">socket.io-client</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.wallex.ir</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">transports</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">],</span>
+<span class="p">});</span>
+
+<span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">connect</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">"</span><span class="s2">subscribe</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">channel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDTTMN@marketCap</span><span class="dl">"</span>
+  <span class="p">});</span>
+
+  <span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">Broadcaster</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">channel</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">channel</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">USDTTMN@marketCap</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ پیام دریافتی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"USDTTMN"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"24h_ch"</span><span class="p">:</span><span class="mf">-1.24</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"7d_ch"</span><span class="p">:</span><span class="mf">-2.05</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"24h_volume"</span><span class="p">:</span><span class="s2">"859806.8400000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"7d_volume"</span><span class="p">:</span><span class="s2">"8607956.3700000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"24h_quoteVolume"</span><span class="p">:</span><span class="s2">"27493903077.3600000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"24h_highPrice"</span><span class="p">:</span><span class="s2">"32227.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"24h_lowPrice"</span><span class="p">:</span><span class="s2">"31650.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="s2">"31653.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastQty"</span><span class="p">:</span><span class="s2">"94.0900000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bidPrice"</span><span class="p">:</span><span class="s2">"31653.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"askPrice"</span><span class="p">:</span><span class="s2">"31704.0000000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastTradeSide"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bidVolume"</span><span class="p">:</span><span class="s2">"268856.3300000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"askVolume"</span><span class="p">:</span><span class="s2">"289262.0300000000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bidCount"</span><span class="p">:</span><span class="mi">345</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"askCount"</span><span class="p">:</span><span class="mi">378</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"direction"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"SELL"</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"BUY"</span><span class="p">:</span><span class="mi">42</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="s2">"2020-10-01T00:00:00.000000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>برای دریافت بروزترین اطلاعات هر یک از بازارها باید برروی کانال <code>SYMBOL@marketCap</code> سابسکرایب کنید.</p>
+
+<aside class="notice">
+مقادیر مجاز برای <code>SYMBOL</code> شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
+</aside>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">curl</a>
+                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
