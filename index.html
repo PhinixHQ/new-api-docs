@@ -380,6 +380,9 @@
                     <a href="#34b353d77b" class="toc-h2 toc-link" data-title="ثبت سفارش">ثبت سفارش</a>
                   </li>
                   <li>
+                    <a href="#ae6b387de5" class="toc-h2 toc-link" data-title="اطلاعات سفارش">اطلاعات سفارش</a>
+                  </li>
+                  <li>
                     <a href="#27f17a67f7" class="toc-h2 toc-link" data-title="لغو سفارش">لغو سفارش</a>
                   </li>
                   <li>
@@ -1668,6 +1671,37 @@
 <li><code>CANCELED</code> سفارش لغو شده</li>
 </ul>
 </aside>
+<h2 id='ae6b387de5'>اطلاعات سفارش</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/orders/LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000.000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"origQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"origSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62999995.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-18T13:45:08.000000Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید اطلاعات یک سفارش ثبت شده را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/orders/{clientOrderId}</code></p>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی این درخواست، درست مشابه «ثبت سفارش» است.</p>
 <h2 id='27f17a67f7'>لغو سفارش</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s1">'https://api.wallex.ir/v1/account/orders?clientOrderId=LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb'</span>
 </code></pre></div>
 <p>با این درخواست می‌توانید یک سفارش فعال را لغو کنید:</p>
@@ -1745,7 +1779,7 @@
 <td>نماد (انگلیسی) بازار</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-2'>خروجی</h3>
+<h3 id='bb3932300e-3'>خروجی</h3>
 <p>خروجی این درخواست فهرستی از سفارش‌های فعال است که اطلاعات هر سفارش مشابه اطلاعاتی‌ست که در درخواست <strong>ثبت سفارش</strong> گفته شد.</p>
 <h2 id='88252f5871'>لیست آخرین معاملات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/trades'</span>
 </code></pre></div>
@@ -1804,7 +1838,7 @@
 <td>جهت معامله</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-3'>خروجی</h3>
+<h3 id='bb3932300e-4'>خروجی</h3>
 <p>خروجی این درخواست فهرستی از آخرین معاملات انجام شده است که هر معامله شامل اطلاعات زیر است:</p>
 
 <table><thead>
