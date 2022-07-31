@@ -371,6 +371,12 @@
                   <li>
                     <a href="#47e5fe8a01" class="toc-h2 toc-link" data-title="دارایی‌های کیف پول">دارایی‌های کیف پول</a>
                   </li>
+                  <li>
+                    <a href="#ad42ee7e29" class="toc-h2 toc-link" data-title="برداشت‌های رمزارز">برداشت‌های رمزارز</a>
+                  </li>
+                  <li>
+                    <a href="#1edf39589f" class="toc-h2 toc-link" data-title="واریزهای رمزارز">واریزهای رمزارز</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1468,6 +1474,167 @@
 <td>دارایی فریزشده</td>
 </tr>
 </tbody></table>
+<h2 id='ad42ee7e29'>برداشت‌های رمزارز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/crypto-withdrawal'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000123456</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.0000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"wallet_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefghijklmnopqrstuvwxyz01234567"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"txHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"block_explorer_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://tronscan.org/#/transaction/0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accomplished"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRYPTO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"min_confirmation_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transaction_fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_unavailability_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_unavailability_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"configs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alpha"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRC20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-03-09T20:44:00Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید فهرستی از برداشت‌های رمزارز را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/crypto-withdrawal</code></p>
+<h3 id='32005b38cc'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>page</code></td>
+<td>عدد</td>
+<td>خیر</td>
+<td>شمارهٔ صفحه</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>عدد</td>
+<td>خیر</td>
+<td>تعداد آیتم در هر صفحه</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-6'>خروجی</h3>
+<p>خروجی این درخواست، فهرستی از برداشت‌های رمزارز کاربر است.</p>
+<h2 id='1edf39589f'>واریزهای رمزارز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/crypto-withdrawal'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHIB"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"txHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"man-0000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"block_explorer_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://etherscan.io/tx/man-0000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"min_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coin_type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHIB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"شیبا"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shiba inu"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRYPTO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_unavailability_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_unavailability_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERC20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDRESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_availability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirmed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-10T00:33:21Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"wallet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0123456789abcdef0123456789abcdef01234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo_base"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"deposit_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GIFT"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"result_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید فهرستی از واریزهای رمزارز را دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/crypto-deposit</code></p>
+<h3 id='32005b38cc-2'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>page</code></td>
+<td>عدد</td>
+<td>خیر</td>
+<td>شمارهٔ صفحه</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td>عدد</td>
+<td>خیر</td>
+<td>تعداد آیتم در هر صفحه</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-7'>خروجی</h3>
+<p>خروجی این درخواست، فهرستی از واریزهای رمزارز کاربر است.</p>
 <h1 id='be6c46831d'>سفارش‌ها و معاملات</h1>
 <aside class="notice">
 دسترسی به سفارش‌ها و معاملات کاربر نیاز به احراز هویت توسط کلید API دارد.
