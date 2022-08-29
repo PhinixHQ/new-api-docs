@@ -346,6 +346,9 @@
                     <a href="#be8d9c51a2" class="toc-h2 toc-link" data-title="لیست سفارش‌های باز">لیست سفارش‌های باز</a>
                   </li>
                   <li>
+                    <a href="#a9d83b0e77" class="toc-h2 toc-link" data-title="لیست سفارش‌های باز تمام بازارها">لیست سفارش‌های باز تمام بازارها</a>
+                  </li>
+                  <li>
                     <a href="#88252f5871" class="toc-h2 toc-link" data-title="لیست آخرین معاملات">لیست آخرین معاملات</a>
                   </li>
                   <li>
@@ -982,7 +985,6 @@
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre></div>
 <p>با درخواست زیر می‌توانید لیست سفارش‌های باز (Order Book) هر بازار را دریافت کنید:</p>
 
@@ -1033,6 +1035,54 @@
 <td>مجموع قیمت</td>
 </tr>
 </tbody></table>
+<h2 id='a9d83b0e77'>لیست سفارش‌های باز تمام بازارها</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/depth?symbol=BTCUSDT'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"BTCUSDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21300.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"106.5"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21400.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"107"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21100.0000000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1e-06</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0211"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20889.8100000000000000"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001472</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.74980032"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SHIBUSDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"USDTTMN"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با درخواست زیر می‌توانید لیست سفارش‌های باز (Order Book) تمام بازارها را یکجا دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v2/depth/all</code></p>
+<h3 id='bb3932300e-4'>خروجی</h3>
+<p>خروجی این درخواست شامل فهرستی از سفارش‌های فروش (ask) و خرید (bid) است.</p>
 <h2 id='88252f5871'>لیست آخرین معاملات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/trades?symbol=BTCUSDT'</span>
 </code></pre></div>
 <blockquote>
@@ -1087,7 +1137,7 @@
 <aside class="notice">
 مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
 </aside>
-<h3 id='bb3932300e-4'>خروجی</h3>
+<h3 id='bb3932300e-5'>خروجی</h3>
 <p>خروجی این درخواست شامل فهرستی از آخرین معاملات بازار و هر معامله شامل اطلاعات زیر است:</p>
 
 <table><thead>
@@ -1217,7 +1267,7 @@
   <li><code>1D</code> برای کندل‌های روزانه</li>
 </ul>
 </aside>
-<h3 id='bb3932300e-5'>خروجی</h3>
+<h3 id='bb3932300e-6'>خروجی</h3>
 <p>خروجی این درخواست شامل فهرستی از کندل‌ها بازار شامل اطلاعات زیر است:</p>
 
 <table><thead>
