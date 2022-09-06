@@ -406,6 +406,20 @@
               </ul>
           </li>
           <li>
+            <a href="#91cc6eb929" class="toc-h1 toc-link" data-title="معاملات آنی">معاملات آنی</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#8679412974" class="toc-h2 toc-link" data-title="لیست بازارهای معامله‌ آنی">لیست بازارهای معامله‌ آنی</a>
+                  </li>
+                  <li>
+                    <a href="#9de7405b03" class="toc-h2 toc-link" data-title="دریافت قیمت">دریافت قیمت</a>
+                  </li>
+                  <li>
+                    <a href="#c69fbb5b9d" class="toc-h2 toc-link" data-title="ثبت سفارش آنی">ثبت سفارش آنی</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#5750146b8f" class="toc-h1 toc-link" data-title="وب‌سوکت">وب‌سوکت</a>
               <ul class="toc-list-h2">
                   <li>
@@ -2202,6 +2216,517 @@
 <td><code>timestamp</code></td>
 <td>زمان</td>
 <td>زمان ثبت معامله</td>
+</tr>
+</tbody></table>
+<h1 id='91cc6eb929'>معاملات آنی</h1>
+<aside class="notice">
+دسترسی به API های دریافت قیمت و ثبت سفارش نیاز به احراز هویت توسط کلید API دارد.
+</aside>
+<h2 id='8679412974'>لیست بازارهای معامله‌ آنی</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/otc/markets'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTCUSDT"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"baseAssetPrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quotePrecision"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بیت کوین - تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faBaseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بیت کوین"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"faQuoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"تتر"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stepSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tickSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minQty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000001</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"minNotional"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"maxNotional"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"24h_ch"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.56</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">20353.33</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_highPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">20500</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"24h_lowPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">19100</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"buyStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sellStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENABLE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-06-28T13:19:16.000000Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با درخواست زیر می‌توانید لیست بازارها و وضعیت آنها به ازای هرجهت سفارش دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/otc/markets</code></p>
+<h3 id='bb3932300e'>خروجی</h3>
+<p>خروجی این درخواست شامل نگاشتی از بازارهاست و هر بازار شامل اطلاعاتی به شرح زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>baseAsset</code></td>
+<td>رشته</td>
+<td>ارز پایه</td>
+</tr>
+<tr>
+<td><code>baseAssetPrecision</code></td>
+<td>عدد</td>
+<td>تعداد اعشار ارز پایه</td>
+</tr>
+<tr>
+<td><code>quoteAsset</code></td>
+<td>رشته</td>
+<td>ارز تجاری</td>
+</tr>
+<tr>
+<td><code>quotePrecision</code></td>
+<td>عدد</td>
+<td>تعداد اعشار ارز تجاری</td>
+</tr>
+<tr>
+<td><code>faName</code></td>
+<td>رشته</td>
+<td>نام فارسی بازار</td>
+</tr>
+<tr>
+<td><code>faBaseAsset</code></td>
+<td>رشته</td>
+<td>نام فارسی ارز پایه</td>
+</tr>
+<tr>
+<td><code>faQuoteAsset</code></td>
+<td>رشته</td>
+<td>نام فارسی ارز تجاری</td>
+</tr>
+<tr>
+<td><code>stepSize</code></td>
+<td>عدد</td>
+<td>تعداد اعشار افزایش/کاهش حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>tickSize</code></td>
+<td>عدد</td>
+<td>تعداد اعشار افزایش/کاهش مبلغ تراکنش</td>
+</tr>
+<tr>
+<td><code>minQty</code></td>
+<td>عدد</td>
+<td>حداقل حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>maxQty</code></td>
+<td>عدد</td>
+<td>حداکثر حجم تراکنش</td>
+</tr>
+<tr>
+<td><code>minNotional</code></td>
+<td>عدد</td>
+<td>حداقل مبلغ تراکنش</td>
+</tr>
+<tr>
+<td><code>stats</code></td>
+<td>متغیر</td>
+<td>اطلاعات آماری بازار</td>
+</tr>
+<tr>
+<td><code>buyStatus</code></td>
+<td>رشته</td>
+<td>وضعیت امکان خرید در این بازار</td>
+</tr>
+<tr>
+<td><code>sellStatus</code></td>
+<td>رشته</td>
+<td>وضعیت امکان فروش در این بازار</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>رشته</td>
+<td>زمان ایجاد بازار</td>
+</tr>
+</tbody></table>
+
+<p>همچنین آمارهای هر بازار شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>24h_ch</code></td>
+<td>عدد</td>
+<td>درصد تغییرات قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_highPrice</code></td>
+<td>عدد</td>
+<td>بیشترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>24h_lowPrice</code></td>
+<td>عدد</td>
+<td>کمترین قیمت در ۲۴ ساعت گذشته</td>
+</tr>
+<tr>
+<td><code>lastPrice</code></td>
+<td>عدد</td>
+<td>آخرین قیمت تراکنش</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر وضعیت امکان خرید/فروش در هر بازار شامل مقدارهای زیر است:
+
+<ul>
+<li><code>ENABLE</code> قابلیت امکان ثبت سفارش</li>
+<li><code>DISABLE</code> عدم امکان ثبت سفارش به صورت موقت</li>
+</ul>
+</aside>
+<h2 id='9de7405b03'>دریافت قیمت</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\ </span><span class="nt">-H</span> <span class="s2">"x-api-key: your_api_key"</span> <span class="se">\ </span><span class="nt">-d</span> <span class="s1">'{
+  "symbol": "BTCUSDT",
+  "side": "BUY",
+}'</span> <span class="s1">'https://api.wallex.ir/v1/account/otc/price'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20288.99471291"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price_expires_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-30T09:21:08Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید قیمت خرید/فروش رمزارزهای معامله آنی را به ازای هر بازار دریافت کنید:</p>
+
+<p><code>GET https://api.wallex.ir/v1/account/otc/price</code></p>
+
+<aside class="notice">
+قیمت دریافت شده به ازای هر بازار و جهت معامله حداکثر تا زمان مشخص شده در مقدار کلید بازگشتی <code>price_expires_at</code> معتبر می باشد. پس از گذشت این زمان نیاز است دوباره قیمت جدید دریافت شود.
+</aside>
+<h3 id='194e5e5a5f'>بدنهٔ درخواست</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>بله</td>
+<td>جهت خرید/فروش</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارهای معامله آنی به دست می‌آید.
+</aside>
+
+<aside class="notice">
+مقادیر مجاز برای جهت سفارش شامل مقدارهای زیر است:
+
+<ul>
+<li><code>BUY</code> جهت سفارش برای خرید یک رمزارز</li>
+<li><code>SELL</code> جهت سفارش برای فروش یک رمزارز</li>
+</ul>
+</aside>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی درخواست دریافت قیمت شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد</td>
+</tr>
+<tr>
+<td><code>price_expires_at</code></td>
+<td>تاریخ</td>
+<td>زمان منقضی شدن قیمت</td>
+</tr>
+</tbody></table>
+<h2 id='c69fbb5b9d'>ثبت سفارش آنی</h2>
+<aside class="notice">
+قبل از ثبت سفارش با API زیر نیاز است با استفاده از API دریافت قیمت، قیمت رمز ارز مورد نظر برای ثبت سفارش را در بازار و جهت سفارش درخواستی دریافت کنید و قبل از منقضی شدن آن سفارش خود را ثبت نمایید.
+</aside>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\ </span><span class="nt">-H</span> <span class="s2">"x-api-key: your_api_key"</span> <span class="se">\ </span><span class="nt">-d</span> <span class="s1">'{
+  "symbol": "BTCUSDT",
+  "side": "BUY",
+  "amount": 0.01,
+}'</span> <span class="s1">'https://api.wallex.ir/v1/account/otc/orders'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"عملیات با موفقیت انجام شد"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OTC-xxxxx-xxx-xxx-xxx-xxxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20288.99471291"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"origQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedSum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202.88994713"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20288.99471291"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"202.88994713"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"executedPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FILLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fills"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20288.99471291"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1988000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeCoefficient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0040000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-18T11:10:30Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109290.3000000000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"makerFeeCoefficient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0E-8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"takerFeeCoefficient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00400000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isBuyer"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید سفارش جدیدی برای خرید/فروش آنی رمزارز ثبت کنید:</p>
+
+<p><code>POST https://api.wallex.ir/v1/account/otc/orders</code></p>
+<h3 id='194e5e5a5f-2'>بدنهٔ درخواست</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>بله</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>بله</td>
+<td>جهت خرید/فروش</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>عدد</td>
+<td>بله</td>
+<td>حجم سفارش</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+مقادیر مجاز برای نماد بازار شامل نمادهایی‌ست که از درخواست لیست بازارهای معامله آنی به دست می‌آید.
+</aside>
+
+<aside class="notice">
+مقادیر مجاز برای جهت سفارش شامل مقدارهای زیر است:
+
+<ul>
+<li><code>BUY</code> جهت سفارش برای خرید یک رمزارز</li>
+<li><code>SELL</code> جهت سفارش برای فروش یک رمزارز</li>
+</ul>
+</aside>
+<h3 id='bb3932300e-3'>خروجی</h3>
+<p>خروجی درخواست ثبت سفارش اطلاعات سفارش ثبت شده و شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>رشته</td>
+<td>نوع سفارش</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td>جهت</td>
+<td>جهت خرید/فروش</td>
+</tr>
+<tr>
+<td><code>clientOrderId</code></td>
+<td>رشته</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+<tr>
+<td><code>transactTime</code></td>
+<td>تاریخ</td>
+<td>زمان ثبت سفارش</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت واحد</td>
+</tr>
+<tr>
+<td><code>origQty</code></td>
+<td>عددرشته</td>
+<td>حجم سفارش</td>
+</tr>
+<tr>
+<td><code>executedSum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت محقق شده</td>
+</tr>
+<tr>
+<td><code>executedQty</code></td>
+<td>عددرشته</td>
+<td>حجم محقق شده</td>
+</tr>
+<tr>
+<td><code>executedPrice</code></td>
+<td>عددرشته</td>
+<td>قیمت محقق شده</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت سفارش</td>
+</tr>
+<tr>
+<td><code>executedPercent</code></td>
+<td>عدد</td>
+<td>درصد تحقق سفارش</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>رشته</td>
+<td>وضعیت سفارش</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>بولی</td>
+<td>سفارش فعال یا غیرفعال</td>
+</tr>
+<tr>
+<td><code>fills</code></td>
+<td>متغیر</td>
+<td>اطلاعات معامله انجام شده</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+وضعیت سفارش همیشه برابر <code>FILLED</code> می باشد. 
+</aside>
+
+<p>همچنین اطلاعات معامله انجام شده شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>price</code></td>
+<td>عددرشته</td>
+<td>قیمت معامله</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>عددرشته</td>
+<td>حجم معامله</td>
+</tr>
+<tr>
+<td><code>fee</code></td>
+<td>عددرشته</td>
+<td>کارمزد معامله</td>
+</tr>
+<tr>
+<td><code>feeCoefficient</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد معامله</td>
+</tr>
+<tr>
+<td><code>feeAsset</code></td>
+<td>رشته</td>
+<td>نوع دارایی کارمزد کسر شده</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>تاریخ</td>
+<td>زمان انجام معامله</td>
+</tr>
+<tr>
+<td><code>symbol</code></td>
+<td>رشته</td>
+<td>نماد (انگلیسی) بازار</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>عددرشته</td>
+<td>مجموع قیمت معامله</td>
+</tr>
+<tr>
+<td><code>makerFeeCoefficient</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد سفارش گذار</td>
+</tr>
+<tr>
+<td><code>takerFeeCoefficient</code></td>
+<td>عددرشته</td>
+<td>ضریب کارمزد سفارش بردار</td>
+</tr>
+<tr>
+<td><code>isBuyer</code></td>
+<td>بولی</td>
+<td>جهت سفارش معامله گذار</td>
 </tr>
 </tbody></table>
 <h1 id='5750146b8f'>وب‌سوکت</h1>
