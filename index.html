@@ -2007,6 +2007,24 @@
 <li><code>CANCELED</code> سفارش لغو شده</li>
 </ul>
 </aside>
+
+<aside class="notice">
+در صورتی که ثبت سفارش به دلیل داده‌های نامعتبر با خطای <code>422</code> متوقف شود، برای پردازش ساده‌تر، در بخش <code>result</code> کد خطایی با عنوان <code>error_code</code> باز خواهد گشت که مقدار آن به صورت زیر قابل تفسیر است:
+
+<ul>
+<li><code>1001</code>: دقت اعشار قیمت سفارش قابل پذیرش نیست</li>
+<li><code>1002</code>: دقت اعشار حجم سفارش قابل پذیرش نیست </li>
+<li><code>1003</code>: سفارش‌های <code>MARKET</code> نمی‌توانند قیمت داشته باشند</li>
+<li><code>1004</code>: حجم سفارش کمتر از حد مجاز است</li>
+<li><code>1005</code>: حجم سفارش یا مجموع قیمت سفارش الزامی است</li>
+<li><code>1006</code>: موجودی کافی نیست</li>
+<li><code>1007</code>: قیمت توقف الزامی است</li>
+<li><code>1008</code>: قیمت سفارش الزامی است</li>
+<li><code>1009</code>: دقت اعشار قیمت توقف قابل پذیرش نیست</li>
+<li><code>1010</code>: حجم و مجموع قیمت سفارش نباید همزمان تعیین شوند</li>
+<li><code>1011</code>: دقت اعشار مجموع قیمت سفارش قابل پذیرش نیست</li>
+</ul>
+</aside>
 <h2 id='ae6b387de5'>اطلاعات سفارش</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/orders/LIMIT-670f7c34-d609-40d3-b98e-0150640d79cb'</span>
 </code></pre></div>
 <blockquote>
