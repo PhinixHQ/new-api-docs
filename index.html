@@ -375,6 +375,9 @@
                     <a href="#47e5fe8a01" class="toc-h2 toc-link" data-title="دارایی‌های کیف پول">دارایی‌های کیف پول</a>
                   </li>
                   <li>
+                    <a href="#28d9321586" class="toc-h2 toc-link" data-title="ثبت برداشت تومان">ثبت برداشت تومان</a>
+                  </li>
+                  <li>
                     <a href="#5763b8b28a" class="toc-h2 toc-link" data-title="لیست واریزهای رمزارز">لیست واریزهای رمزارز</a>
                   </li>
                   <li>
@@ -1541,6 +1544,82 @@
 <td>دارایی فریزشده</td>
 </tr>
 </tbody></table>
+<h2 id='28d9321586'>ثبت برداشت تومان</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{
+  "iban": 1000001,
+  "value": 100000,
+}'</span> <span class="s1">'https://api.wallex.ir/v1/account/money-withdrawal'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tracking_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-21T13:15:06Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"iban"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdraw_available_amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"iban"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IR590********************1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"owners"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"حسین حسینی / فعال"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"bank_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"سامان"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACCEPTED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"bank_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SABCIR"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"بانک سامان"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">49500</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"درخواست برداشت ثبت شد"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید درخواست برداشت تومان را ثبت کنید:</p>
+
+<p><code>POST https://api.wallex.ir/v1/account/money-withdrawal</code></p>
+
+<aside class="notice">
+اندپوینت ثبت درخواست برداشت محدودیت فراخوانی ۶ درخواست در ثانیه دارد.
+</aside>
+
+<aside class="notice">
+به دستور پلیس فتا، برای برداشت کوین IP شما باید کشور ایران باشد.
+</aside>
+<h3 id='194e5e5a5f'>بدنهٔ درخواست</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>iban</code></td>
+<td>عدد</td>
+<td>بله</td>
+<td>شناسهٔ شبای بانکی مقصد</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>عدد</td>
+<td>بله</td>
+<td>مقدار برداشت تومان</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-6'>خروجی</h3>
+<p>خروجی این درخواست اطلاعات درخواست برداشت ثبت شدهٔ کاربر است.</p>
 <h2 id='5763b8b28a'>لیست واریزهای رمزارز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/crypto-withdrawal'</span>
 </code></pre></div>
 <blockquote>
@@ -1618,7 +1697,7 @@
 <td>تعداد آیتم در هر صفحه</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-6'>خروجی</h3>
+<h3 id='bb3932300e-7'>خروجی</h3>
 <p>خروجی این درخواست، فهرستی از واریزهای رمزارز کاربر است.</p>
 <h2 id='4f4c74937a'>لیست برداشت‌های رمزارز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s1">'https://api.wallex.ir/v1/account/crypto-withdrawal'</span>
 </code></pre></div>
@@ -1700,7 +1779,7 @@
 <td>تعداد آیتم در هر صفحه</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-7'>خروجی</h3>
+<h3 id='bb3932300e-8'>خروجی</h3>
 <p>خروجی این درخواست، فهرستی از برداشت‌های رمزارز کاربر است.</p>
 <h2 id='0b172fff4a'>ثبت برداشت رمزارز</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s1">'{
   "coin": "USDT",
@@ -1768,7 +1847,7 @@
 <aside class="warning">
 ارسال کوین به آدرس به شبکه‌‌ای غیر از شبکه انتخاب شده ممکن است منجر به از دست دادن آن برای همیشه شود.
 </aside>
-<h3 id='194e5e5a5f'>بدنهٔ درخواست</h3>
+<h3 id='194e5e5a5f-2'>بدنهٔ درخواست</h3>
 <table><thead>
 <tr>
 <th>پارامتر</th>
@@ -1808,7 +1887,7 @@
 <td>مموی آدرس؛ در صورت نیاز شبکه</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-8'>خروجی</h3>
+<h3 id='bb3932300e-9'>خروجی</h3>
 <p>خروجی این درخواست اطلاعات درخواست برداشت ثبت شدهٔ کاربر است.</p>
 <h1 id='be6c46831d'>سفارش‌ها و معاملات</h1>
 <aside class="notice">
