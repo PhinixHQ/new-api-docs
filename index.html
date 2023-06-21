@@ -436,9 +436,27 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#b01e12dd9b" class="toc-h1 toc-link" data-title="وال‌گیت">وال‌گیت</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cee8b80267" class="toc-h2 toc-link" data-title="احراز هویت">احراز هویت</a>
+                  </li>
+                  <li>
+                    <a href="#e82c521a24" class="toc-h2 toc-link" data-title="لیست محصولات">لیست محصولات</a>
+                  </li>
+                  <li>
+                    <a href="#bf5db873c0" class="toc-h2 toc-link" data-title="ثبت سفارش وال‌گیت">ثبت سفارش وال‌گیت</a>
+                  </li>
+                  <li>
+                    <a href="#d8a9054d8e" class="toc-h2 toc-link" data-title="اطلاعات سفارش وال‌گیت">اطلاعات سفارش وال‌گیت</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://wallex.ir'>سایت والکس</a></li>
+            <li><a href='https://wallgate.io'>سایت والگیت</a></li>
             <li><a href='https://github.com/wallex-docs/wallex-docs.github.io/issues'>گزارش خطای مستندات</a></li>
         </ul>
     </div>
@@ -2981,6 +2999,422 @@
 <aside class="notice">
 مقادیر مجاز برای <code>SYMBOL</code> شامل نمادهایی‌ست که از درخواست لیست بازارها به دست می‌آید.
 </aside>
+<h1 id='b01e12dd9b'>وال‌گیت</h1>
+<aside class="notice">
+برای دسترسی به وب سرویسهای والگیت کاربر نیاز به احراز هویت دارد.
+</aside>
+<h2 id='cee8b80267'>احراز هویت</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    "username": "09123456789,
+    "password": "P4$$w0rD"
+}'</span> <span class="s1">'https://api.wallgate.io/v1/store/oauth/token'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">31622400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{access_token}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید احراز هویت انجام دهید:</p>
+
+<p><code>POST https://api.wallgate.io/v1/store/oauth/token</code></p>
+<h3 id='bb3932300e'>خروجی</h3>
+<p>خروجی درخواست شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>token_type</code></td>
+<td>رشته</td>
+<td>نوع توکن</td>
+</tr>
+<tr>
+<td><code>expires_in</code></td>
+<td>عدد</td>
+<td>زمان انقضا</td>
+</tr>
+<tr>
+<td><code>access_token</code></td>
+<td>رشته</td>
+<td>توکن احراز هویت</td>
+</tr>
+</tbody></table>
+<h2 id='e82c521a24'>لیست محصولات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="s1">'https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">136</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"from"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">164</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"مستر کارت مجازی آمریکایی"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.wallgate.io/v1/store/image/dg8CrxtZ56NZzqEu"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_stock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"۳ دلار"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">290000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_stock"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیست محصولات را دریافت کنید:</p>
+
+<p><code>GET https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1</code></p>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی درخواست شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>product_id</code></td>
+<td>عدد</td>
+<td>شناسهٔ یکتای محصول</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>رشته</td>
+<td>نام</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>رشته</td>
+<td>وضعیت</td>
+</tr>
+<tr>
+<td><code>variants</code></td>
+<td>عدد</td>
+<td>واریانت‌ها</td>
+</tr>
+</tbody></table>
+
+<p>واریانت‌ها:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>عدد</td>
+<td>شناسهٔ یکتای محصول</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>رشته</td>
+<td>نام</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عدد</td>
+<td>قیمت</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>رشته</td>
+<td>وضعیت</td>
+</tr>
+</tbody></table>
+<h2 id='bf5db873c0'>ثبت سفارش وال‌گیت</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer {access_token}"</span> <span class="se">\</span>
+<span class="nt">-d</span> <span class="s1">'{
+    "variant_id": 941,
+    "qty": 1,
+    "account": "USDT" //USDT or TMN
+}'</span> <span class="s1">'https://api.wallgate.io/v1/store/api/order'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"گیفت کارت استیم آمریکا (1 دلار)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">48000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"credit_card"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید سفارش ثبت کنید:</p>
+
+<p><code>POST https://api.wallgate.io/v1/store/api/order</code></p>
+<h3 id='bb3932300e-3'>خروجی</h3>
+<p>خروجی درخواست شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>رشته</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>آرایه</td>
+<td>آیتم‌ها</td>
+</tr>
+</tbody></table>
+
+<p>آیتم‌ها:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>رشته</td>
+<td>نام آیتم</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عدد</td>
+<td>قیمت</td>
+</tr>
+<tr>
+<td><code>qty</code></td>
+<td>عدد</td>
+<td>مقدار</td>
+</tr>
+<tr>
+<td><code>status_code</code></td>
+<td>رشته</td>
+<td>وضعیت</td>
+</tr>
+<tr>
+<td><code>card_type</code></td>
+<td>رشته</td>
+<td>نوع کارت</td>
+</tr>
+</tbody></table>
+<h2 id='d8a9054d8e'>اطلاعات سفارش وال‌گیت</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="nt">-H</span> <span class="s2">"Authorization: Bearer {access_token}"</span> <span class="se">\</span>
+<span class="s1">'https://api.wallgate.io/v1/store/api/order/{order_id}'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"گیفت کارت استیم آمریکا (1 دلار)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">48000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"credit_card"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"cvv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0678"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"zip_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6789"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32/12"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"card_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0123456789123"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید یک سفارش فعال را لغو کنید:</p>
+
+<p><code>GET https://api.wallgate.io/v1/store/api/order/{order_id}</code></p>
+<h3 id='32005b38cc'>پارامترهای کوئری</h3>
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>اجباری</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>عدد</td>
+<td>بله</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+</tbody></table>
+<h3 id='bb3932300e-4'>خروجی</h3>
+<p>خروجی درخواست شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>order_id</code></td>
+<td>رشته</td>
+<td>شناسهٔ یکتای سفارش</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>آرایه</td>
+<td>آیتم‌ها</td>
+</tr>
+</tbody></table>
+
+<p>آیتم‌ها:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>name</code></td>
+<td>رشته</td>
+<td>نام آیتم</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>عدد</td>
+<td>قیمت</td>
+</tr>
+<tr>
+<td><code>qty</code></td>
+<td>عدد</td>
+<td>مقدار</td>
+</tr>
+<tr>
+<td><code>status_code</code></td>
+<td>رشته</td>
+<td>وضعیت (فارسی)</td>
+</tr>
+<tr>
+<td><code>card_type</code></td>
+<td>عدد</td>
+<td>نوع کارت</td>
+</tr>
+<tr>
+<td><code>codes</code></td>
+<td>متغیر</td>
+<td>کدها</td>
+</tr>
+</tbody></table>
+
+<p>کدها:</p>
+
+<p>گیفت کارت:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>serial</code></td>
+<td>رشته</td>
+<td>سریال</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>رشته</td>
+<td>آدرس</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td>رشته</td>
+<td>مالک</td>
+</tr>
+</tbody></table>
+
+<p>کارت اعتباری:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>card_number</code></td>
+<td>رشته</td>
+<td>شماره کارت</td>
+</tr>
+<tr>
+<td><code>expiration</code></td>
+<td>رشته</td>
+<td>تاریخ انقضا</td>
+</tr>
+<tr>
+<td><code>cvv</code></td>
+<td>عدد</td>
+<td>CVV</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td>رشته</td>
+<td>مالک</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>رشته</td>
+<td>آدرس</td>
+</tr>
+<tr>
+<td><code>zipcode</code></td>
+<td>رشته</td>
+<td>کد پستی</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
