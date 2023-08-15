@@ -443,6 +443,9 @@
                     <a href="#cee8b80267" class="toc-h2 toc-link" data-title="احراز هویت">احراز هویت</a>
                   </li>
                   <li>
+                    <a href="#09d5a868f1" class="toc-h2 toc-link" data-title="لیست دسته‌بندی‌ها">لیست دسته‌بندی‌ها</a>
+                  </li>
+                  <li>
                     <a href="#e82c521a24" class="toc-h2 toc-link" data-title="لیست محصولات">لیست محصولات</a>
                   </li>
                   <li>
@@ -3049,8 +3052,65 @@
 <td>توکن احراز هویت</td>
 </tr>
 </tbody></table>
+<h2 id='09d5a868f1'>لیست دسته‌بندی‌ها</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<span class="s1">'https://api.wallgate.io/v1/store/api/categories'</span>
+</code></pre></div>
+<blockquote>
+<p>نمونهٔ خروجی:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"گیفت کارت اپل"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Gift Card"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.wallgate.io/v1/store/image/ytKxz02EG00qXMPZ"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"گیفت کارت گوگل پلی"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GooglePlay Giftcard"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.wallgate.io/v1/store/image/NbvMJAjYJ2fV5dga"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>با این درخواست می‌توانید لیست دسته‌بندی‌ها را دریافت کنید:</p>
+
+<p><code>GET https://api.wallgate.io/v1/store/api/categories</code></p>
+<h3 id='bb3932300e-2'>خروجی</h3>
+<p>خروجی درخواست شامل اطلاعات زیر است:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>عدد</td>
+<td>شناسهٔ یکتای دسته‌بندی</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>رشته</td>
+<td>نام</td>
+</tr>
+<tr>
+<td><code>title_en</code></td>
+<td>رشته</td>
+<td>نام انگلیسی</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>رشته</td>
+<td>تصویر</td>
+</tr>
+</tbody></table>
 <h2 id='e82c521a24'>لیست محصولات</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-<span class="s1">'https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1'</span>
+<span class="s1">'https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1&amp;category=3'</span>
 </code></pre></div>
 <blockquote>
 <p>نمونهٔ خروجی:</p>
@@ -3069,6 +3129,13 @@
         </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"مستر کارت مجازی آمریکایی"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.wallgate.io/v1/store/image/dg8CrxtZ56NZzqEu"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_stock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"گیفت کارت اپل"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Gift Card"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.wallgate.io/v1/store/image/ytKxz02EG00qXMPZ"</span><span class="w">
+
+        </span><span class="p">},</span><span class="w">        
         </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
             </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="p">,</span><span class="w">
@@ -3085,7 +3152,11 @@
 <p>با این درخواست می‌توانید لیست محصولات را دریافت کنید:</p>
 
 <p><code>GET https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1</code></p>
-<h3 id='bb3932300e-2'>خروجی</h3>
+
+<p>برای فیلتر محصولات بر اساس شناسه دسته بندی:</p>
+
+<p><code>GET https://api.wallgate.io/v1/store/api/products?page_size=20&amp;page=1&amp;category=3</code></p>
+<h3 id='bb3932300e-3'>خروجی</h3>
 <p>خروجی درخواست شامل اطلاعات زیر است:</p>
 
 <table><thead>
@@ -3111,9 +3182,45 @@
 <td>وضعیت</td>
 </tr>
 <tr>
+<td><code>category</code></td>
+<td>عدد</td>
+<td>اطلاعات دسته‌بندی</td>
+</tr>
+<tr>
 <td><code>variants</code></td>
 <td>عدد</td>
 <td>واریانت‌ها</td>
+</tr>
+</tbody></table>
+
+<p>دسته‌بندی:</p>
+
+<table><thead>
+<tr>
+<th>پارامتر</th>
+<th>نوع</th>
+<th>توضیحات</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>عدد</td>
+<td>شناسهٔ یکتای دسته‌بندی</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>رشته</td>
+<td>نام</td>
+</tr>
+<tr>
+<td><code>title_en</code></td>
+<td>رشته</td>
+<td>نام انگلیسی</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>رشته</td>
+<td>تصویر</td>
 </tr>
 </tbody></table>
 
@@ -3176,7 +3283,7 @@
 <p>با این درخواست می‌توانید سفارش ثبت کنید:</p>
 
 <p><code>POST https://api.wallgate.io/v1/store/api/order</code></p>
-<h3 id='bb3932300e-3'>خروجی</h3>
+<h3 id='bb3932300e-4'>خروجی</h3>
 <p>خروجی درخواست شامل اطلاعات زیر است:</p>
 
 <table><thead>
@@ -3284,7 +3391,7 @@
 <td>شناسهٔ یکتای سفارش</td>
 </tr>
 </tbody></table>
-<h3 id='bb3932300e-4'>خروجی</h3>
+<h3 id='bb3932300e-5'>خروجی</h3>
 <p>خروجی درخواست شامل اطلاعات زیر است:</p>
 
 <table><thead>
