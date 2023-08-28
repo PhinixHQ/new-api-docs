@@ -454,6 +454,9 @@
                   <li>
                     <a href="#d8a9054d8e" class="toc-h2 toc-link" data-title="اطلاعات سفارش وال‌گیت">اطلاعات سفارش وال‌گیت</a>
                   </li>
+                  <li>
+                    <a href="#7670620deb" class="toc-h2 toc-link" data-title="کدهای خطا">کدهای خطا</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -3340,6 +3343,36 @@
 <td>نوع کارت</td>
 </tr>
 </tbody></table>
+
+<p><code>مقادیر status_code:</code></p>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>وضعیت</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>pending</code></td>
+<td><code>در انتظار پردازش</code></td>
+</tr>
+<tr>
+<td><code>processing</code></td>
+<td><code>در حال پردازش</code></td>
+</tr>
+<tr>
+<td><code>processed</code></td>
+<td><code>پردازش شده</code></td>
+</tr>
+<tr>
+<td><code>failed</code></td>
+<td><code>پردازش سفارش با خطا مواجه شده</code></td>
+</tr>
+<tr>
+<td><code>refunded</code></td>
+<td><code>هزینه آیتم بازپرداخت شده</code></td>
+</tr>
+</tbody></table>
 <h2 id='d8a9054d8e'>اطلاعات سفارش وال‌گیت</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {access_token}"</span> <span class="se">\</span>
 <span class="s1">'https://api.wallgate.io/v1/store/api/order/{order_id}'</span>
@@ -3372,7 +3405,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>با این درخواست می‌توانید یک سفارش فعال را لغو کنید:</p>
+<p>با این درخواست می‌توانید یک سفارش را پیگیری کنید:</p>
 
 <p><code>GET https://api.wallgate.io/v1/store/api/order/{order_id}</code></p>
 <h3 id='32005b38cc'>پارامترهای کوئری</h3>
@@ -3454,6 +3487,36 @@
 </tr>
 </tbody></table>
 
+<p><code>مقادیر status_code:</code></p>
+
+<table><thead>
+<tr>
+<th>code</th>
+<th>وضعیت</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>pending</code></td>
+<td><code>در انتظار پردازش</code></td>
+</tr>
+<tr>
+<td><code>processing</code></td>
+<td><code>در حال پردازش</code></td>
+</tr>
+<tr>
+<td><code>processed</code></td>
+<td><code>پردازش شده</code></td>
+</tr>
+<tr>
+<td><code>failed</code></td>
+<td><code>پردازش سفارش با خطا مواجه شده</code></td>
+</tr>
+<tr>
+<td><code>refunded</code></td>
+<td><code>هزینه آیتم بازپرداخت شده</code></td>
+</tr>
+</tbody></table>
+
 <p>کدها:</p>
 
 <p>گیفت کارت:</p>
@@ -3520,6 +3583,54 @@
 <td><code>zipcode</code></td>
 <td>رشته</td>
 <td>کد پستی</td>
+</tr>
+</tbody></table>
+<h2 id='7670620deb'>کدهای خطا</h2>
+<table><thead>
+<tr>
+<th style="text-align: center">HTTP STATUS CODE</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">200</td>
+<td><code>درخواست موفق</code></td>
+</tr>
+<tr>
+<td style="text-align: center">400</td>
+<td><code>درخواست اشتباه</code></td>
+</tr>
+<tr>
+<td style="text-align: center">401</td>
+<td><code>توکن ارسالی نامعتبر است</code></td>
+</tr>
+<tr>
+<td style="text-align: center">402</td>
+<td><code>موجودی کیف پول کافی نیست</code></td>
+</tr>
+<tr>
+<td style="text-align: center">403</td>
+<td><code>دسترسی غیر مجاز</code></td>
+</tr>
+<tr>
+<td style="text-align: center">404</td>
+<td><code>مسیر فراخوانی شده پیدا نشد</code></td>
+</tr>
+<tr>
+<td style="text-align: center">405</td>
+<td><code>متد فراخوانی شده مجاز نیست</code></td>
+</tr>
+<tr>
+<td style="text-align: center">422</td>
+<td><code>مقادیر ارسالی نامعتبر است</code></td>
+</tr>
+<tr>
+<td style="text-align: center">429</td>
+<td><code>تعداد درخواست‌ها بیش از حد مجاز</code></td>
+</tr>
+<tr>
+<td style="text-align: center">500</td>
+<td><code>سرور در دسترس نیست</code></td>
 </tr>
 </tbody></table>
 
